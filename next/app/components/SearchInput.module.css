@@ -1,0 +1,21 @@
+.component {
+  display: flex;
+  column-gap: 10px;
+  padding: 8px;
+
+  background-color: white;
+}
+
+.icon {
+  color: #878eb0;
+}
+
+.input {
+  display: block;
+  flex-grow: 1;
+  border-style: none;
+}
+
+.input:focus {
+  outline: none;
+}
