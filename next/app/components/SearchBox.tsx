@@ -3,8 +3,75 @@
 import { useState } from "react";
 import styles from "./SearchBox.module.css";
 import { SearchInput } from "./SearchInput";
+import { SearchResultList } from "./SearchResultList";
 
 interface Props {}
+
+const items = [
+  {
+    title: "QuantumCompute as a Service (QCaaS): overview",
+    description:
+      "QCaaS allows users to harness the power of quantum computing without the need for complex infrastructure. Users can submit quantum computing tasks and receive results through a simple API, making quantum computing accessible for a wide range of applications.",
+    breadcrumb: ["Compute services", "Quantum computing", "QCaaS"],
+  },
+  {
+    title: "NeuralNet Storage (NNS): architecture",
+    description:
+      "NNS is a cloud storage service specifically designed for machine learning models and datasets. It provides optimized storage and retrieval for neural networks, making it easy for developers to manage and deploy machine learning projects seamlessly.",
+    breadcrumb: ["Storage services", "Other storage", "NNS"],
+  },
+  {
+    title: "Augmented Reality Rendering Platform (ARRP)",
+    description:
+      "ARRP is a cloud service dedicated to rendering complex augmented reality (AR) scenes in real-time. Developers can offload the resource-intensive rendering process to the cloud, enabling the creation of immersive AR applications without the need for powerful local hardware.",
+    breadcrumb: ["VR and AR services", "AR", "ARRP"],
+  },
+  {
+    title: "Genomic Data Analytics Cloud (GDAC)",
+    description:
+      ": GDAC is tailored for genomics research, offering scalable and high-performance computing resources for analyzing large genomic datasets. Researchers can perform tasks such as variant calling, genome assembly, and population genetics analysis with ease.",
+    breadcrumb: ["Other services", "GDAC"],
+  },
+  {
+    title: "Blockchain Integration Hub (BIH)",
+    description:
+      "BIH simplifies the integration of blockchain technology into various applications. It provides APIs and services to interact with popular blockchain networks, manage digital assets, and implement decentralized applications (DApps) without the need for extensive blockchain expertise",
+    breadcrumb: ["Blockchain services", "Integration", "BIH"],
+  },
+  {
+    title: "Real-time Language Translation API (RLTAPI): pricing",
+    description:
+      "RLTAPI is a cloud service that enables real-time language translation for text and speech. Developers can integrate this service into their applications to provide seamless multilingual communication and translation capabilities.",
+    breadcrumb: ["AI services", "Translation", "RLTAPI"],
+  },
+  {
+    title: "Smart City IoT Orchestrator (SCIO)",
+    description:
+      "SCIO offers a comprehensive platform for managing and orchestrating Internet of Things (IoT) devices in smart city environments. It facilitates the collection, processing, and analysis of sensor data to enhance urban infrastructure and services",
+    breadcrumb: ["Other services", "SCIO"],
+  },
+
+  {
+    title: "Robotic Process Automation Engine (RPAE)",
+    description:
+      "RPAE automates repetitive business processes by leveraging robotic process automation technology. Organizations can deploy and manage software robots in the cloud to streamline workflows, reduce errors, and increase operational efficiency.",
+    breadcrumb: ["Robot services", "process automation", "RPAE"],
+  },
+
+  {
+    title: "Biometric Identity Verification Service (BIVS)",
+    description:
+      "BIVS provides a secure and reliable cloud-based solution for biometric identity verification. Developers can integrate facial recognition, fingerprint matching, and other biometric authentication methods into their applications to enhance security and user authentication.",
+    breadcrumb: ["Other services", "BIVS"],
+  },
+
+  {
+    title: "Environmental Impact Analytics (EIA)",
+    description:
+      "EIA is a cloud service focused on analyzing and visualizing environmental data. It helps organizations and researchers assess the environmental impact of various factors, such as carbon footprint, pollution levels, and climate change, by providing powerful analytics tools and APIs.",
+    breadcrumb: ["Assesment", "EIA"],
+  },
+];
 
 export function SearchBox(props: Props) {
   const [filterWord, setFilterWord] = useState("");
@@ -12,6 +79,7 @@ export function SearchBox(props: Props) {
   return (
     <div className={styles.component}>
       <SearchInput filterWord={filterWord} setFilterWord={setFilterWord} />
+      <SearchResultList items={items} />
     </div>
   );
 }

@@ -1,0 +1,21 @@
+.component {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+
+  font-size: 12px;
+}
+
+.element {
+  color: #606060;
+}
+
+.element:hover {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.icon {
+  color: #606060;
+}

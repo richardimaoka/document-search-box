@@ -1,0 +1,8 @@
+.component {
+  border-top: solid 1px #b3b3b3;
+  background-color: white;
+
+  /* cancel the default styles for <ul> */
+  margin: 0px;
+  padding: 0px;
+}

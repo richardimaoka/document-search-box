@@ -1,0 +1,28 @@
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.component {
+  background-color: white;
+
+  padding: 8px;
+  margin-bottom: 4px;
+
+  /* cancel the default styles */
+  list-style-type: none;
+}
+
+.component:hover {
+  background-color: #f1f1f1;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.description {
+  margin-top: 4px;
+  font-size: 14px;
+}
