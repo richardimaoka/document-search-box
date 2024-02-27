@@ -109,6 +109,10 @@ function filterEntries(entries: DocEntry[], filterWord: string): DocEntry[] {
   });
 }
 
+async function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 app.get("/search", async (req, res) => {
   // If an exception is thrown inside readJson(), it will cause the default error handler of express.js to return 500 error
   const entries = readJson();
@@ -119,6 +123,8 @@ app.get("/search", async (req, res) => {
   console.log(`express.js called with filter word = '${filterWord}'`);
 
   const filteredEntries = filterEntries(entries, filterWord);
+
+  await sleep(500);
 
   console.log(filteredEntries);
   res.json(filteredEntries);
